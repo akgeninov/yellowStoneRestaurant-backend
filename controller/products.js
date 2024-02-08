@@ -1,7 +1,10 @@
 function getProducts(req, res, next){
     res.json(
         {name: "Biscuit",
-        url: "www.example.com"
+        price: 9.00,
+        description: "this is biscuit",
+        composition: "this biscuit made form corn",
+        storage: "keep this bisvuit in place with normal temperature"
     })
 }
 
