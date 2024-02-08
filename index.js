@@ -1,19 +1,19 @@
-const http = require('http')
+const express = require("express");
+const cors = require('cors')
+require('dotenv').config()
 const PORT = process.env.PORT || 3000
-const express = require('express');
+
+const productRouter = require('./routes/productRoutes')
 
 const app = express();
-const mainRouter = require('./routes/index')
-const dbConnection = require('./config/database')
 
-app.use('/', mainRouter);
 
-dbConnection.sync({alter: true})
-.then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    })
-})
-.catch(err => {
-    console.error(err);
-})
+app.use(cors())
+app.use(express.json())
+
+app.use(productRouter);
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
