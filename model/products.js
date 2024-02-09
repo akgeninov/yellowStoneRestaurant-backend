@@ -10,6 +10,9 @@ const products = db.define("products", {
     name: {
         type: DataTypes.STRING
     },
+    price: {
+        type: DataTypes.INTEGER
+    },
     description: {
         type: DataTypes.STRING
     },
@@ -26,7 +29,7 @@ const products = db.define("products", {
 
 // db.sync({ alter: true }) // kalo mau menambahkan agar data tidak ke reset semua ganti force jadi alt: true
 // .then(() => {
-//     console.log(`articles synced`)
+//     console.log(`products synced`)
 // })
 // .catch((error) => console.log(`Unable to connect to databse: ${error}`));
 

@@ -9,6 +9,7 @@ router.get('/',(req, res) => {
 });
 
 router.get('/products', productsRouter.getProducts);
-// router.post('/post-product', productsRouter.addProduct);
+// router.post('/backfill-products', productsRouter.backFillProduct);
+router.post('/add-product', productsRouter.addProduct);
 
 module.exports = router;
