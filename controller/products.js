@@ -72,7 +72,8 @@ const addProduct = async (req, res) => {
             composition: req.body.composition,
             storage: req.body.storage,
             price: req.body.price,
-            url_image: req.body.url_image
+            url_image: req.body.url_image, 
+            rate: req.body.rate
         }
   
         await products.create(product);
