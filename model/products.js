@@ -21,6 +21,9 @@ const products = db.define("products", {
     },
     storage: {
         type: DataTypes.STRING
+    },
+    url_image: {
+        type: DataTypes.STRING
     }
 },{
     freezeTableName: true,
