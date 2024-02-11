@@ -33,10 +33,10 @@ const products = db.define("products", {
     timestamps: false
 })
 
-db.sync({ alter: true }) // kalo mau menambahkan agar data tidak ke reset semua ganti force jadi alt: true
-.then(() => {
-    console.log(`products synced`)
-})
-.catch((error) => console.log(`Unable to connect to databse: ${error}`));
+// db.sync({ alter: true }) // kalo mau menambahkan agar data tidak ke reset semua ganti force jadi alt: true
+// .then(() => {
+//     console.log(`products synced`)
+// })
+// .catch((error) => console.log(`Unable to connect to databse: ${error}`));
 
 module.exports = products;
