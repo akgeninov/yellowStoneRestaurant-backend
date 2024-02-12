@@ -89,6 +89,6 @@ const addProduct = async (req, res) => {
             serverMessage : error
           })
         }
-      }
+}
 
 module.exports = {getProducts, addProduct};
