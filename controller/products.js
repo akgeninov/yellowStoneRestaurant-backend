@@ -147,6 +147,20 @@ function getProductsByNameDesc(req, res, next) {
     });
 }
 
+function getProductsByRecomended(req, res, next) {
+    products.findAll({
+        order: [['rate', 'DESC']]
+    })
+    .then((data) => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: `Error get products: ${err.message}`
+        });
+    });
+}
+
 
 module.exports = {
     getProducts, 
@@ -154,5 +168,6 @@ module.exports = {
     getProductsByCheapest,
     getProductsByPriciest,
     getProductsByNameAsc,
-    getProductsByNameDesc
+    getProductsByNameDesc,
+    getProductsByRecomended
 };

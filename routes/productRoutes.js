@@ -15,5 +15,6 @@ router.get('/products-cheapest', productsRouter.getProductsByCheapest);
 router.get('/products-priciest', productsRouter.getProductsByPriciest);
 router.get('/products-name-asc', productsRouter.getProductsByNameAsc);
 router.get('/products-name-desc', productsRouter.getProductsByNameDesc);
+router.get('/products-recomended', productsRouter.getProductsByRecomended);
 
 module.exports = router;
