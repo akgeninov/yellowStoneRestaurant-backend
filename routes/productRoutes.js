@@ -14,5 +14,6 @@ router.post('/add-product', productsRouter.addProduct);
 router.get('/products-cheapest', productsRouter.getProductsByCheapest);
 router.get('/products-priciest', productsRouter.getProductsByPriciest);
 router.get('/products-name-asc', productsRouter.getProductsByNameAsc);
+router.get('/products-name-desc', productsRouter.getProductsByNameDesc);
 
 module.exports = router;
