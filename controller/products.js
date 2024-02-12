@@ -91,4 +91,19 @@ const addProduct = async (req, res) => {
         }
 }
 
-module.exports = {getProducts, addProduct};
+function getProductsByPriciest(req, res, next) {
+    products.findAll({
+        order: [['price', 'ASC']]
+    })
+    .then((data) => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: `Error get products: ${err.message}`
+        });
+    });
+}
+
+
+module.exports = {getProducts, addProduct, getProductsByPriciest};
