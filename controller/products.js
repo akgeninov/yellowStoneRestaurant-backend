@@ -91,7 +91,7 @@ const addProduct = async (req, res) => {
         }
 }
 
-function getProductsByPriciest(req, res, next) {
+function getProductsByCheapest(req, res, next) {
     products.findAll({
         order: [['price', 'ASC']]
     })
@@ -106,4 +106,4 @@ function getProductsByPriciest(req, res, next) {
 }
 
 
-module.exports = {getProducts, addProduct, getProductsByPriciest};
+module.exports = {getProducts, addProduct, getProductsByCheapest};
