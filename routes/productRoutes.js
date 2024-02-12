@@ -12,5 +12,6 @@ router.get('/products', productsRouter.getProducts);
 // router.post('/backfill-products', productsRouter.backFillProduct);
 router.post('/add-product', productsRouter.addProduct);
 router.get('/products-cheapest', productsRouter.getProductsByCheapest);
+router.get('/products-priciest', productsRouter.getProductsByPriciest);
 
 module.exports = router;

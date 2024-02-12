@@ -105,5 +105,24 @@ function getProductsByCheapest(req, res, next) {
     });
 }
 
+function getProductsByPriciest(req, res, next) {
+    products.findAll({
+        order: [['price', 'DESC']]
+    })
+    .then((data) => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: `Error get products: ${err.message}`
+        });
+    });
+}
 
-module.exports = {getProducts, addProduct, getProductsByCheapest};
+
+module.exports = {
+    getProducts, 
+    addProduct, 
+    getProductsByCheapest,
+    getProductsByPriciest
+};
