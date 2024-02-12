@@ -119,10 +119,25 @@ function getProductsByPriciest(req, res, next) {
     });
 }
 
+function getProductsByNameAsc(req, res, next) {
+    products.findAll({
+        order: [['name', 'ASC']]
+    })
+    .then((data) => {
+        res.json(data);
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: `Error get products: ${err.message}`
+        });
+    });
+}
+
 
 module.exports = {
     getProducts, 
     addProduct, 
     getProductsByCheapest,
-    getProductsByPriciest
+    getProductsByPriciest,
+    getProductsByNameAsc
 };
