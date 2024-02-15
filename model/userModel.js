@@ -11,7 +11,7 @@ const users = db.define("users", {
         type: DataTypes.STRING
     },
     email: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     },
     password: {
         type: DataTypes.STRING
